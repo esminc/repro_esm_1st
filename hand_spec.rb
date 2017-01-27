@@ -1,13 +1,19 @@
 require_relative 'agari_checker'
 
 RSpec.describe "Hand" do
-  let(:hand) { "1m 1m 1m 2s 3s 4s 5p 5p 5p 6p 6p 6p 9m 9m"}
+  let(:hand) { "1s 1s 1s 2s 3s 4s 5p 5p 5p 6p 6p 6p 9m 9m"}
 
-  it "" do
+  it "agari?" do
     h = Hand.new(hand)
     expect(h.agari?).to eq true
+  end
 
-    # p(Hand.new(hand).koutsus.to_a)
-    # p(Hand.new(hand).juntsus.to_a)
+  context 'false agari' do
+    let(:hand) { "1s 1s 2s 3s 4s 1s 5p 5p 5p 6p 6p 6p 9m 1p"}
+
+    it "agari?" do
+      h = Hand.new(hand)
+      expect(h.agari?).to eq false
+    end
   end
 end
