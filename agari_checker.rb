@@ -36,21 +36,9 @@ class Hand
     false
   end
 
-  def koutsus
-    @hais.combination(3).select {|hais|
-      koutsu?(hais)
-    }
-  end
-
   def koutsu?(hais)
     return false if hais.count != 3
     hais.map(&:to_s).uniq.count == 1
-  end
-
-  def juntsus
-    @hais.combination(3).select {|hais|
-      juntsu?(hais)
-    }
   end
 
   def juntsu?(hais)
