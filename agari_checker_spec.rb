@@ -2,7 +2,7 @@ require_relative 'agari_checker'
 
 RSpec.describe "agari_checker" do
   let(:hais) {
-    "1m1m1m2s3s4s5p5p5p6p6p6p9m9m"
+    "1m 1m 1m 2s 3s 4s 5p 5p 5p 6p 6p 6p 9m 9m"
   }
   subject {
     AgariChecker.agari?(hais)
